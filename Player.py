@@ -26,6 +26,8 @@ class Player:
     def set_health(self, new_health):
         self.health = new_health
 
+    def __str__(self):
+        return "Player is on track: {} and has {} health. ".format(self.current_track, self.health)
 
 #Hobo inhereits player
 class Hobo(Player):
@@ -42,3 +44,4 @@ class Hobo(Player):
         :return: returns nothing
         """
         Player.__init__(health, current_track)
+
