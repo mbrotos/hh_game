@@ -1,6 +1,6 @@
-class Main:
+class Track:
     """
-    Main encapsulates a hogwartz game and helping functions.
+    Track encapsulates a hogwartz game and helping functions.
     """
     #State variables
     M = None
@@ -23,6 +23,3 @@ class Main:
         self.L0 = L0
         self.L1 = L1
         self.S = S
-    
-
-    
