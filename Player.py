@@ -1,30 +1,34 @@
+import random
+from Main import Main
 class Player:
     """
     Player encapsulates a hogwartz game and helping functions.
     """
-    #State variables
-    M = None
-    L0 = None
-    L1 = None
-    S = None
-
     
-    def __init__(self, M, L0, L1, S):
+    def __init__(self, health, current_track):
         """
         Construct a new 'Main' object.
 
-        :param M: number of tracks
-        :param L0: Time it takes for a train to pass through a tunnel.
-        :param L1: Time it takes for the next train to arrive.
-        :param S: Time that the player stays on each track before jumping to another.
+        :param health: The starting health of the player
+        :param current_track: The track that the player is currently on.
         :return: returns nothing
         """
-        self.M = M
-        self.L0 = L0
-        self.L1 = L1
-        self.S = S
+        self.health = health
+        self.current_track = current_track
 
-import random
+    def get_health(self):
+        return self.health
+
+    def get_current_track(self):
+        return self.current_track
+
+    def set_current_track(self, track):
+        self.current_track = track
+
+    def set_health(self, new_health):
+        self.health = new_health
+
+
 
 #Hobo inhereits player
 class Hobo(Player):
@@ -32,34 +36,26 @@ class Hobo(Player):
     Main encapsulates a hogwartz game and helping functions.
     """
     #State variables
-    messagesList = [[0,""],[1,""]] #0 meaning no varible, 1 meaning track number needed.
+    messagesList = [[0,""],[1,""]] 
 
     
-    def __init__(self, M, L0, L1, S):
+    def __init__(self, health = None, current_track = None):
         """
-        Construct for a non-playing hobo.
+        Construct for a hobo, whether player or non-player(default non-player).
 
-        :param M: number of tracks
-        :param L0: Time it takes for a train to pass through a tunnel.
-        :param L1: Time it takes for the next train to arrive.
-        :param S: Time that the player stays on each track before jumping to another.
+        :param health: The starting health of the player
+        :param current_track: The track that the player is currently on.
         :return: returns nothing
         """
-        self.M = M
-        self.L0 = L0
-        self.L1 = L1
-        self.S = S
+        super(health, current_track)
+
 
 
     def airPlaneMsg(self):
         """
         Selects a random message from the Hobo.
 
-        :param self: the current hobo object
         :return: a string containing a message from the hobo
         """
-        msgChoice = random.choice(self.messagesList)
-        if (msgChoice[0]==0):
-            return msgChoice[1]
-        else:
-            return msgChoice[1].format(super.currentTrack)
+        return (random.choice(self.messagesList)).format(random.randint(1,Main.M))
+        
