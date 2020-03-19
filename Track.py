@@ -6,7 +6,7 @@ class Track:
     Track object .
     """
     
-    def __init__(self):
+    def __init__(self, L0, L1):
         """
         Construct a new 'Track' object.
         :return: returns nothing
@@ -14,8 +14,8 @@ class Track:
         self.initTime = time.time()
         self.hasTrain = False
         self.hasAirplane = False
-        self.L0 = random.randrange(1, 20)
-        self.L1 = random.randrange(5, 30)
+        self.L0 = L0
+        self.L1 = L1
 
     def hasTrain(self):
         """
