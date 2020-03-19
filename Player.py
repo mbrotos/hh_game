@@ -23,6 +23,9 @@ class Player:
     def set_current_track(self, track):
         self.current_track = track
 
+    def set_health(self, new_health):
+        self.health = new_health
+
 
 #Hobo inhereits player
 class Hobo(Player):
