@@ -36,7 +36,7 @@ class Hobo(Player):
     Main encapsulates a hogwartz game and helping functions.
     """
     #State variables
-    messagesList = [[0,""],[1,""]] 
+    messagesList = ["",""] 
 
     
     def __init__(self, health = None, current_track = None):
