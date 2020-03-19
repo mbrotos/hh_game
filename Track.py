@@ -1,25 +1,44 @@
+import time
+import random
+
 class Track:
     """
-    Track encapsulates a hogwartz game and helping functions.
+    Track object .
     """
-    #State variables
-    M = None
-    L0 = None
-    L1 = None
-    S = None
-
     
-    def __init__(self, M, L0, L1, S):
+    def __init__(self):
         """
-        Construct a new 'Main' object.
-
-        :param M: number of tracks
-        :param L0: Time it takes for a train to pass through a tunnel.
-        :param L1: Time it takes for the next train to arrive.
-        :param S: Time that the player stays on each track before jumping to another.
+        Construct a new 'Track' object.
         :return: returns nothing
         """
-        self.M = M
-        self.L0 = L0
-        self.L1 = L1
-        self.S = S
+        self.initTime = time.time()
+        self.hasTrain = False
+        self.hasAirplane = False
+        self.L0 = random.randrange(1, 20)
+        self.L1 = random.randrange(5, 30)
+
+    def hasTrain(self):
+        """
+        :return: True if there is a train on the tracks, False otherwise
+        """
+        currentTime = time.time()
+        if 0<=((currentTime-self.initTime)%(self.L0+self.L1))<=self.L1 :
+            self.hasTrain = False
+        else:
+            self.hasTrain = True
+        return self.hasTrain
+
+    def getAirplane(self):
+        """
+        :return: value of the hasAirplane variable 
+        """
+        return self.hasAirplane
+
+    def setAirplane(self,value):
+        """
+        :param value: boolean  
+        :return: nothing
+        """
+        self.hasAirplane = value
+
+
