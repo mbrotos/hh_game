@@ -6,7 +6,7 @@ class Track:
     Track object .
     """
     
-    def __init__(self, L0, L1):
+    def __init__(self, prob):
         """
         Construct a new 'Track' object.
         :return: returns nothing
@@ -14,10 +14,10 @@ class Track:
         self.initTime = time.time()
         self.hasTrain = False
         self.hasAirplane = False
-        self.L0 = L0
-        self.L1 = L1
+        self.L0 = -1#cal L0
+        self.L1 = -1#cal L1
 
-    def hasTrain(self):
+    def hasTrainFunc(self):
         """
         :return: True if there is a train on the tracks, False otherwise
         """
