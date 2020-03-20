@@ -5,7 +5,7 @@ class Player:
     Player encapsulates a hogwartz game and helping functions.
     """
     
-    def __init__(self, health=100, current_track=1):
+    def __init__(self, health=100, current_track=0):
         """
         Construct a new 'Main' object.
 
@@ -76,4 +76,13 @@ class Hobo(Player):
 
         :return: a string containing a message from the hobo
         """
-        return (random.choice(self.messagesList)).format(random.randint(1,self.numOfTracks))
+        airplane_prob = random.randint(1, 10)
+
+        if airplane_prob == 1:
+            return (random.choice(self.messagesList)).format(random.randint(1,self.numOfTracks))
+
+        elif airplane_prob == 2:
+            return "You missed an Airplane!"
+
+        else:
+            return None
