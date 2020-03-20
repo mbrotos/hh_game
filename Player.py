@@ -28,15 +28,9 @@ class Player:
     def set_health(self, new_health):
         self.health = new_health
 
-<<<<<<< HEAD
-
-
-#Hobo inhereits player
-=======
     def __str__(self):
         return "Player is on track: {} and has {} health. ".format(self.current_track, self.health)
 
->>>>>>> c7ace4e3daf3bd6295f2927e150755affee458de
 class Hobo(Player):
     """
     Main encapsulates a hogwartz game and helping functions.
@@ -63,9 +57,4 @@ class Hobo(Player):
 
         :return: a string containing a message from the hobo
         """
-<<<<<<< HEAD
         return (random.choice(self.messagesList)).format(random.randint(1,Main.M))
-        
-=======
-        return (random.choice(self.messagesList)).format(random.randint(1,Main.M))
->>>>>>> c7ace4e3daf3bd6295f2927e150755affee458de
