@@ -1,5 +1,6 @@
 from Player import Player, Hobo
 from Track import Track
+import random
 class Main:
     """
     Main encapsulates a hogwartz game and helping functions.
@@ -33,7 +34,10 @@ class Main:
         self.playGame()
 
     def getProb(self):
-        return -1  # do something
+        return random.randint(0,1)  # do something
+
+    def getTotalTime(self):
+        return self.current_time
 
     def checkCollision(self):
         current_track = self.player.get_current_track()
@@ -59,7 +63,6 @@ class Main:
     def playGame(self):
         
         while self.player.get_health() > 0 or self.current_time < Main.GAME_TIME:
-            # play
             while self.player.getTOnCurTrack() < self.S:
                 # Hobo airplane function call
                 self.hoboMessage()
@@ -71,7 +74,7 @@ class Main:
                         break
                     self.changeTrack()
 
-                self.player.setTOnCurTrack += 1
+                self.player.setTOnCurTrack(self.player.getTOnCurTrack+1)
 
             self.current_time += self.player.getTOnCurTrack()
             self.changeTrack()

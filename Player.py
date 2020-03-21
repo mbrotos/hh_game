@@ -1,5 +1,4 @@
 import random
-from Main import Main
 class Player:
     """
     Player encapsulates a hogwartz game and helping functions.

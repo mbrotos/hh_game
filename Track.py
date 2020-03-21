@@ -1,6 +1,6 @@
 import time
 import random
-
+from Main import Main
 class Track:
     """
     Track object .
@@ -11,18 +11,21 @@ class Track:
         Construct a new 'Track' object.
         :return: returns nothing
         """
-        self.initTime = time.time()
         self.hasTrain = False
         self.hasAirplane = False
-        self.L0 = -1#cal L0
-        self.L1 = -1#cal L1
+        self.prob = prob
+        self.rand = random.randint(1,10)
+        self.L0 = (Main.GAME_TIME * self.prob) / self.rand
+        self.L1 = (Main.GAME_TIME * (1-self.prob)) / self.rand
+
+
 
     def hasTrainFunc(self):
         """
         :return: True if there is a train on the tracks, False otherwise
         """
         currentTime = time.time()
-        if 0<=((currentTime-self.initTime)%(self.L0+self.L1))<=self.L1 :
+        if 0<=((currentTime)%(self.L0+self.L1))<=self.L1 :
             self.hasTrain = False
         else:
             self.hasTrain = True
