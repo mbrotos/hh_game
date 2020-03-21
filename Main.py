@@ -63,11 +63,12 @@ class Main:
     def playGame(self):
         
         while self.player.get_health() > 0 or self.current_time < Main.GAME_TIME:
+
             while self.player.getTOnCurTrack() < self.S:
                 # Hobo airplane function call
                 self.hoboMessage()
                 track = self.trackList[self.player.get_current_track()]
-
+                # Call hasTrainFunc
                 if self.checkCollision():
                     self.player.set_health(self.player.get_health() - Main.DAMAGE)
                     if self.player.get_health() <= 0:
@@ -76,7 +77,8 @@ class Main:
 
                 self.player.setTOnCurTrack(self.player.getTOnCurTrack() + 1)
 
-            self.current_time += self.player.getTOnCurTrack()
+                self.current_time += 1
+
             self.changeTrack()
 
         if(self.player.get_health() <= 0):
@@ -85,7 +87,5 @@ class Main:
         else:
             print(self.player.get_health())
 
-game = Main(3, 3)
 
-game.playGame()
 
