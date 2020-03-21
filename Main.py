@@ -47,7 +47,7 @@ class Main:
         while new_track == self.player.get_current_track():
             new_track = int(input("You cannot pick the same track. Pick another track: "))
 
-        self.player.set_current_track(new_track)
+        self.player.set_current_track(new_track - 1)
         self.player.setTOnCurTrack(0)
         print(self.player)
 
