@@ -27,7 +27,7 @@ class Main:
 
         self.current_time = 0
         self.prob = self.getProb()  # distribution
-        self.trackList = [Track(self.prob) for i in range(M)]  # creates list of tracks based on prob
+        self.trackList = [Track(self.prob, Main.GAME_TIME) for i in range(M)]  # creates list of tracks based on prob
         self.player = Player(100, 0) # Creates the default player with 100 health on track 1
         self.hobo = Hobo(None, None, self.M)  # creates a hobo with no health or staring and give M
 
@@ -67,7 +67,7 @@ class Main:
                 # Hobo airplane function call
                 self.hoboMessage()
                 track = self.trackList[self.player.get_current_track()]
-                track.hasTrainFunc()
+
                 if self.checkCollision():
                     self.player.set_health(self.player.get_health() - Main.DAMAGE)
                     if self.player.get_health() <= 0:
