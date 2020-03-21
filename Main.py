@@ -71,7 +71,7 @@ class Main:
                         break
                     self.changeTrack()
 
-                self.player.setTOnCurTrack += 1
+                self.player.setTOnCurTrack(self.player.getTOnCurTrack() + 1)
 
             self.current_time += self.player.getTOnCurTrack()
             self.changeTrack()
@@ -82,4 +82,7 @@ class Main:
         else:
             print(self.player.get_health())
 
+game = Main(3, 3)
+
+game.playGame()
 

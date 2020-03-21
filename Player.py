@@ -1,5 +1,4 @@
 import random
-from Main import Main
 class Player:
     """
     Player encapsulates a hogwartz game and helping functions.
@@ -65,9 +64,8 @@ class Hobo(Player):
         :param current_track: The track that the player is currently on.
         :return: returns nothing
         """
-        super(health, current_track)
+        Player.__init__(self, health, current_track)
         self.numOfTracks = M
-
 
 
     def airPlaneMsg(self):
