@@ -47,7 +47,7 @@ class Main:
             return False
 
     def changeTrack(self):
-        new_track = int(input("Change Tracks! You are on track {}. Pick another track to move to from 1 to {} (not including current): ".format(self.player.get_current_track(), self.M)))
+        new_track = int(input("Change Tracks! You are on track {}. Pick another track to move to from 0 to {} (not including current): ".format(self.player.get_current_track(), self.M-1)))
         while new_track == self.player.get_current_track():
             new_track = int(input("You cannot pick the same track. Pick another track: "))
 
@@ -74,7 +74,7 @@ class Main:
                         break
                     self.changeTrack()
 
-                self.player.setTOnCurTrack(self.player.getTOnCurTrack+1)
+                self.player.setTOnCurTrack(self.player.getTOnCurTrack() + 1)
 
             self.current_time += self.player.getTOnCurTrack()
             self.changeTrack()
@@ -85,4 +85,7 @@ class Main:
         else:
             print(self.player.get_health())
 
+game = Main(3, 3)
+
+game.playGame()
 
