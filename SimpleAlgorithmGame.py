@@ -2,7 +2,7 @@ from Main import Main
 import csv
 class SimpleAlgorithmGame(Main):
     """
-    A child object of the Main game create a simple benchmark.
+    A child object of the Main game that creates a simple benchmark.
     """
     def __init__(self, M, S):
         """
