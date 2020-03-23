@@ -1,5 +1,4 @@
 from Main import Main
-import csv
 class SimpleAlgorithmGame(Main):
     """
     A child object of the Main game that creates a simple benchmark.
