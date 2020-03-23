@@ -26,8 +26,4 @@ class SimpleAlgorithmGame(Main):
         super.player.setTOnCurTrack(0)
         print(super.player)
 
-tests = csv.reader("csv_File_With_Test_Cases_HERE")
-for test in tests:
-    currentGame = SimpleAlgorithmGame(test[0], test[1])
-    currentGame.playGame()
-    
+
