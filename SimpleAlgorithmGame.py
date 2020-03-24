@@ -10,19 +10,19 @@ class SimpleAlgorithmGame(Main):
         :param S: Time that the player stays on each track before jumping to another.
         :return: returns nothing 
         """
-        super(self.M, self.S)
+        super().__init__(M, S)
 
     def changeTrack(self):
         """
         Overrides the changeTrack() function. A simple algorithm that will just move 
         to the next higher- or lower-numbered track in case of a collision.
         """
-        current_track = super.player.get_current_track()
+        current_track = self.player.get_current_track()
         if current_track+1 == self.M:
-            super.player.set_current_track(0)
+            self.player.set_current_track(0)
         else:
-            super.player.set_current_track(current_track+1)
-        super.player.setTOnCurTrack(0)
-        print(super.player)
+            self.player.set_current_track(current_track+1)
+        self.player.setTOnCurTrack(0)
+        print(self.player)
 
 

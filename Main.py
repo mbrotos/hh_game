@@ -18,9 +18,13 @@ class Main:
         :param S: Time that the player stays on each track before jumping to another.
         :return: returns nothing
         """
-        if M is None:  # exception handling.......
+        if M is None:
             self.M = int(input("Input the number of tracks: "))
             self.S = int(input("Input the time that the player stays on each track before jumping to another: "))
+            while self.M <= 1 or self.S <=0:
+                self.M = int(input("Input the number of tracks: "))
+                self.S = int(input("Input the time that the player stays on each track before jumping to another: "))
+
         else:
             self.M = M
             self.S = S
@@ -31,17 +35,22 @@ class Main:
         self.player = Player(100, 0) # Creates the default player with 100 health on track 1
         self.hobo = Hobo(None, None, self.M)  # creates a hobo with no health or staring and give M
 
-        self.playGame()
-
     def getProb(self):
         return random.randint(0,1)  # do something
 
     def getTotalTime(self):
         return self.current_time
 
+    def resetTime(self):
+        self.current_time = 0
+
+    def getNumTracks(self):
+        return self.M
+
     def checkCollision(self):
         current_track = self.player.get_current_track()
         if self.trackList[current_track].hasTrain:
+            self.player.setCollisions(self.player.getCollisions() + 1)
             return True
         else:
             return False
@@ -66,7 +75,7 @@ class Main:
 
             while self.player.getTOnCurTrack() < self.S:
                 # Hobo airplane function call
-                self.hoboMessage()
+                #self.hoboMessage()
                 track = self.trackList[self.player.get_current_track()]
                 # Call hasTrainFunc
                 if self.checkCollision():
@@ -83,9 +92,11 @@ class Main:
 
         if(self.player.get_health() <= 0):
             print("you dead")
-            exit(0)
         else:
             print(self.player.get_health())
+
+
+        return self.player.getCollisions()
 
 
 

@@ -15,6 +15,7 @@ class Player:
         self.health = health
         self.current_track = current_track
         self.tOnCurTrack = 0
+        self.numCollisions = 0
 
     def get_health(self):
         return self.health
@@ -33,6 +34,12 @@ class Player:
 
     def setTOnCurTrack(self, time):
         self.tOnCurTrack = time
+
+    def getCollisions(self):
+        return self.numCollisions
+
+    def setCollisions(self, num):
+        self.numCollisions = num
 
     def __str__(self):
         return "Player is on track: {} and has {} health. ".format(self.current_track, self.health)
@@ -64,7 +71,7 @@ class Hobo(Player):
         :param current_track: The track that the player is currently on.
         :return: returns nothing
         """
-        super(health, current_track)
+        super().__init__(health, current_track)
         self.numOfTracks = M
 
 
