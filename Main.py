@@ -30,26 +30,30 @@ class Main:
             self.S = S
 
         self.current_time = 0
-        self.prob = self.getProb()  # distribution
-        self.trackList = [Track(self.prob, Main.GAME_TIME) for i in range(M)]  # creates list of tracks based on prob
+        self.trackList = [Track(self.getProb(), Main.GAME_TIME) for i in range(M)]  # creates list of tracks based on prob
         self.player = Player(100, 0) # Creates the default player with 100 health on track 1
         self.hobo = Hobo(None, None, self.M)  # creates a hobo with no health or staring and give M
 
     def getProb(self):
-        return random.randint(0,1)  # do something
+        return random.randint(1,10)  # do something
 
     def getTotalTime(self):
         return self.current_time
 
-    def resetTime(self):
+    def reset(self):
         self.current_time = 0
+        self.player.set_health(100)
+        self.player.set_current_track(0)
+        self.player.setCollisions(0)
+        for i in range(len(self.trackList)):
+            self.trackList[i].setLastTime(None)
 
     def getNumTracks(self):
         return self.M
 
     def checkCollision(self):
         current_track = self.player.get_current_track()
-        if self.trackList[current_track].hasTrain:
+        if self.trackList[current_track].hasTrainFunc(self.current_time):
             self.player.setCollisions(self.player.getCollisions() + 1)
             return True
         else:

@@ -9,7 +9,8 @@ S = 5
 def optimizeGame(simpleGame, optimizeGame, dataSet = [ [-1] ]*M, simpleCollisionsL = [], optimizeCollisionsL = []):
     
     oCollisions = optimizeGame.playGame(dataSet)
-    simpleCollisionsL.append(simpleGame.playGame())
+    sCollisons = simpleGame.playGame()
+    simpleCollisionsL.append(sCollisons)
     
     optimizeCollisionsL.append(oCollisions)
     dataSet = optimizeGame.getData()
@@ -17,6 +18,11 @@ def optimizeGame(simpleGame, optimizeGame, dataSet = [ [-1] ]*M, simpleCollision
     if oCollisions == 0:
         return (simpleCollisionsL, optimizeCollisionsL)
 
+    # Resets games without changing random probablilties 
+    simpleGame.reset()
+    optimizeGame.reset()
+
+    # Recursive call
     optimizeGame(simpleGame, optimizeGame, simpleCollisionsL, optimizeCollisionsL)
     return -1
 

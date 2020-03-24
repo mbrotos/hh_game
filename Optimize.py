@@ -61,7 +61,7 @@ class Optimize(Main):
 
     def checkCollision(self):
         current_track = self.player.get_current_track()
-        if self.trackList[current_track].hasTrain:
+        if self.trackList[current_track].hasTrainFunc(self.current_time):
             self.player.setCollisions(self.player.getCollisions() + 1)
             return True
         else:
@@ -71,7 +71,5 @@ class Optimize(Main):
             return False
 
     def playGame(self, dataSet):
-        self.player.set_health(100)
-        self.resetTime()
         self.dataSet = dataSet
         return super().playGame()
