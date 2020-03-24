@@ -19,11 +19,13 @@ class Optimize(Main):
         Overrides the changeTrack() function. A optimization algorithm will be implemented
         to decide which track to move to.
         """
-        unclear = True
+        unclear = True #for the case where no best next track is found
 
+        #sorts the safe times in each track
         for i in range(self.getNumTracks()):
             self.dataSet[i] = sorted(self.dataSet[i])
 
+        #set base track and get the safe time on that track
         current_track = self.player.get_current_track()
         nextTrack = 0 if current_track != 0 else 1
         longestTime = 0
@@ -36,6 +38,7 @@ class Optimize(Main):
                  longestTime = count
                  unclear = False
 
+        #find the safest next track
         for i in range(self.getNumTracks()):
             if i != current_track:
                 if self.getTotalTime() +1 in self.dataSet[i]:
@@ -48,12 +51,12 @@ class Optimize(Main):
                         nextTrack = i
                         unclear = False
 
+        #sets the next track/ either the best or random
         if unclear == True:
             self.player.set_current_track(random.randint(0,self.getNumTracks()-1))
         else:
             self.player.set_current_track(nextTrack)
                     
-        #change track
         print(self.player)
 
     def checkCollision(self):
