@@ -3,8 +3,8 @@ import matplotlib.ticker as mticker
 from SimpleAlgorithmGame import SimpleAlgorithmGame
 from Optimize import Optimize
 
-M = 5
-S = 5
+M = 10
+S = 2
 
 def optimizeGame(simpleGameObj, optimizeGameObj, dataSet = [ [] ]*M, simpleCollisionsL = [], optimizeCollisionsL = []):
     
@@ -15,26 +15,24 @@ def optimizeGame(simpleGameObj, optimizeGameObj, dataSet = [ [] ]*M, simpleColli
     optimizeCollisionsL.append(oCollisions)
     dataSet = optimizeGameObj.getData()
 
-    if oCollisions - sCollisons > 5 :
+    if len(optimizeCollisionsL) == 5:
         return (simpleCollisionsL, optimizeCollisionsL)
-
-    # Resets games without changing random probablilties 
-    simpleGameObj.reset()
-    optimizeGameObj.reset()
-
-    # Recursive call
-    optimizeGame(simpleGameObj, optimizeGameObj, dataSet, simpleCollisionsL, optimizeCollisionsL)
-    return -1
+    else:
+        # Resets games without changing random probablilties 
+        simpleGameObj.reset()
+        optimizeGameObj.reset()
+        # Recursive call
+        return optimizeGame(simpleGameObj, optimizeGameObj, dataSet, simpleCollisionsL, optimizeCollisionsL)
 
 
 sGame = SimpleAlgorithmGame(M,S)
 oGame = Optimize(M, S, [ [] ]*M)
 dataPoints = optimizeGame(sGame, oGame)
-print(dataPoints[0])
-print(dataPoints[1])
-plt.plot(dataPoints[0])
-plt.plot(dataPoints[1])
+plt.plot(dataPoints[0], label="Simple Algorithm")
+plt.plot(dataPoints[1], label="Opptimized Algorithm")
 plt.ylabel('Number of Collisions')
 plt.xlabel('Number of games played')
+plt.xlim(xmin=1)
 plt.gca().xaxis.set_major_locator(mticker.MultipleLocator(1))
+plt.legend()
 plt.show()

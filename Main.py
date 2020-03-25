@@ -84,7 +84,6 @@ class Main:
             while self.player.getTOnCurTrack() < self.S and self.current_time < Main.GAME_TIME:
                 # Hobo airplane function call
                 #self.hoboMessage()
-                track = self.trackList[self.player.get_current_track()]
                 # Call hasTrainFunc
                 if self.checkCollision():
                     self.player.set_health(self.player.get_health() - Main.DAMAGE)
@@ -92,11 +91,11 @@ class Main:
                         break
                     self.changeTrack()
 
-                self.player.setTOnCurTrack(self.player.getTOnCurTrack() + 1)
+                self.player.setTOnCurTrack(0)
 
                 self.current_time += 1
 
-            if self.current_time < Main.GAME_TIME:
+            if self.current_time >= Main.GAME_TIME:
                 break
 
             self.changeTrack()
