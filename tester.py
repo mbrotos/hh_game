@@ -23,7 +23,7 @@ def optimizeGame(simpleGame, optimizeGame, dataSet = [ [-1] ]*M, simpleCollision
     optimizeGame.reset()
 
     # Recursive call
-    optimizeGame(simpleGame, optimizeGame, simpleCollisionsL, optimizeCollisionsL)
+    optimizeGame(simpleGame, optimizeGame, dataSet, simpleCollisionsL, optimizeCollisionsL)
     return -1
 
 
