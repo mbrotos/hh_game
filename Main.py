@@ -7,7 +7,7 @@ class Main:
     """
     Main encapsulates a hogwartz game and helping functions.
     """
-    GAME_TIME = 10 #WHATEVER...
+    GAME_TIME = 100 #WHATEVER...
     DAMAGE = 1
 
     def __init__(self, M=None, S=None):

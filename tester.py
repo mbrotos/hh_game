@@ -15,7 +15,7 @@ def optimizeGame(simpleGameObj, optimizeGameObj, dataSet = [ [] ]*M, simpleColli
     optimizeCollisionsL.append(oCollisions)
     dataSet = optimizeGameObj.getData()
 
-    if len(optimizeCollisionsL) == 5:
+    if len(optimizeCollisionsL) == 100:
         return (simpleCollisionsL, optimizeCollisionsL)
     else:
         # Resets games without changing random probablilties 
@@ -33,6 +33,6 @@ plt.plot(dataPoints[1], label="Opptimized Algorithm")
 plt.ylabel('Number of Collisions')
 plt.xlabel('Number of games played')
 plt.xlim(xmin=1)
-plt.gca().xaxis.set_major_locator(mticker.MultipleLocator(1))
+#plt.gca().xaxis.set_major_locator(mticker.MultipleLocator(1))
 plt.legend()
 plt.show()

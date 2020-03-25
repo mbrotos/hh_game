@@ -20,7 +20,7 @@ class Optimize(Main):
     def checkConsecutive(self, alist, ele, count = 1):
         currentIndex = alist.index(ele)
         if len(alist) > currentIndex+1 and alist[currentIndex+1] == ele +1:
-            self.checkConsecutive(alist, ele+1, count+1)
+            return self.checkConsecutive(alist, ele+1, count+1)
         return count
 
     def changeTrack(self):
