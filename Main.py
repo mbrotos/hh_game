@@ -1,13 +1,13 @@
+import random
 from Player import Player, Hobo
 from Track import Track
-import random
 from scipy.stats import expon
 
 class Main:
     """
     Main encapsulates a hogwartz game and helping functions.
     """
-    GAME_TIME = 100 #WHATEVER...
+    GAME_TIME = 10 #WHATEVER...
     DAMAGE = 1
 
     def __init__(self, M=None, S=None):
@@ -26,19 +26,20 @@ class Main:
             while self.M <= 1 or self.S <=0:
                 self.M = int(input("Input the number of tracks: "))
                 self.S = int(input("Input the time that the player stays on each track before jumping to another: "))
-
         else:
             self.M = M
             self.S = S
 
         self.current_time = 0
-        self.trackList = [Track(self.getProb(), Main.GAME_TIME) for i in range(M)]  # creates list of tracks based on prob
+        self.prob = self.getProb()
+        self.trackList = [Track(self.prob, Main.GAME_TIME) for i in range(self.M)]  # creates list of tracks based on prob
         self.player = Player(100, 0) # Creates the default player with 100 health on track 1
         self.hobo = Hobo(None, None, self.M)  # creates a hobo with no health or staring and give M
 
     def getProb(self):
 	#use probability density function to get exponential distribution.
-        return expon.pdf(random.randrange(1,10))
+        #return expon.pdf(random.randrange(1,10))
+        return 0.8
 
     def getTotalTime(self):
         return self.current_time
@@ -47,9 +48,10 @@ class Main:
         self.current_time = 0
         self.player.set_health(100)
         self.player.set_current_track(0)
+        self.player.setTOnCurTrack(0)
         self.player.setCollisions(0)
-        for i in range(len(self.trackList)):
-            self.trackList[i].setLastTime(None)
+        # for i in range(len(self.trackList)):
+        #     self.trackList[i].setLastTime(None)
 
     def getNumTracks(self):
         return self.M
@@ -66,7 +68,6 @@ class Main:
         new_track = int(input("Change Tracks! You are on track {}. Pick another track to move to from 0 to {} (not including current): ".format(self.player.get_current_track(), self.M-1)))
         while new_track == self.player.get_current_track():
             new_track = int(input("You cannot pick the same track. Pick another track: "))
-
         self.player.set_current_track(new_track)
         self.player.setTOnCurTrack(0)
         print(self.player)
@@ -78,9 +79,9 @@ class Main:
 
     def playGame(self):
         
-        while self.player.get_health() > 0 or self.current_time < Main.GAME_TIME:
+        while self.player.get_health() > 0 and self.current_time < Main.GAME_TIME:
 
-            while self.player.getTOnCurTrack() < self.S:
+            while self.player.getTOnCurTrack() < self.S and self.current_time < Main.GAME_TIME:
                 # Hobo airplane function call
                 #self.hoboMessage()
                 track = self.trackList[self.player.get_current_track()]
@@ -95,6 +96,9 @@ class Main:
 
                 self.current_time += 1
 
+            if self.current_time < Main.GAME_TIME:
+                break
+
             self.changeTrack()
 
         if(self.player.get_health() <= 0):
@@ -104,6 +108,9 @@ class Main:
 
 
         return self.player.getCollisions()
+
+# game = Main()
+# game.playGame()
 
 
 

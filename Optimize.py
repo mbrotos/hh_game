@@ -14,6 +14,15 @@ class Optimize(Main):
         super().__init__(M, S)
         self.dataSet = data
 
+    def getData(self):
+        return self.dataSet
+
+    def checkConsecutive(self, alist, ele, count = 1):
+        currentIndex = alist.index(ele)
+        if len(alist) > currentIndex+1 and alist[currentIndex+1] == ele +1:
+            self.checkConsecutive(alist, ele+1, count+1)
+        return count
+
     def changeTrack(self):
         """
         Overrides the changeTrack() function. A optimization algorithm will be implemented
@@ -30,30 +39,26 @@ class Optimize(Main):
         nextTrack = 0 if current_track != 0 else 1
         longestTime = 0
         if self.getTotalTime() + 1 in self.dataSet[nextTrack]:
-            count = 1
-            currentIndex = self.dataSet[nextTrack].index(self.getTotalTime() + count) 
-            while self.dataSet[current_track][currentIndex] == self.getTotalTime() + count + 1:
-                count+=1
-            if count > longestTime:
-                 longestTime = count
-                 unclear = False
+            unclear = False
+            longestTime = self.checkConsecutive(self.dataSet[nextTrack], self.getTotalTime() + 1)
 
         #find the safest next track
         for i in range(self.getNumTracks()):
             if i != current_track:
-                if self.getTotalTime() +1 in self.dataSet[i]:
-                    count = 1
-                    currentIndex = self.dataSet[nextTrack].index(self.getTotalTime() + count) 
-                    while self.dataSet[i][currentIndex] == self.getTotalTime() + count + 1:
-                        count+=1
-                    if count > longestTime:
-                        longestTime = count
+                if self.getTotalTime() + 1 in self.dataSet[i]:
+                    unclear = False
+                    currentLongest = self.checkConsecutive(self.dataSet[i], self.getTotalTime() + 1)
+                    if currentLongest > longestTime:
+                        longestTime = currentLongest
                         nextTrack = i
-                        unclear = False
+                    
 
         #sets the next track/ either the best or random
         if unclear == True:
-            self.player.set_current_track(random.randint(0,self.getNumTracks()-1))
+            nextTrack = random.randint(0,self.getNumTracks()-1)
+            while nextTrack == current_track:
+                nextTrack = random.randint(0,self.getNumTracks()-1)
+            self.player.set_current_track(nextTrack)
         else:
             self.player.set_current_track(nextTrack)
                     

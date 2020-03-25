@@ -13,13 +13,12 @@ class Track:
         :param L1: Time it takes for the next train to arrive.
         """
         self.totalTime = GAME_TIME
-        self.hasTrain = False
         self.hasAirplane = False
         self.prob = prob
         self.rand = random.randint(1, 10)
         self.L0 = (GAME_TIME * self.prob) / self.rand
         self.L1 = (GAME_TIME * (1-self.prob)) / self.rand
-        self.lastTrainTime = None
+        # self.lastTrainTime = None
 
 
     def hasTrainFunc(self, currentGameTime):
@@ -36,11 +35,30 @@ class Track:
             # if False check if current game time - last time track had train is greater than or equal to L1
                 #return true
 
-        if 0<=((currentGameTime)%(self.L0+self.L1))<=self.L1 :
-            self.hasTrain = False
+
+       # if self.lastTrainTime == None:
+            #do something
+        if currentGameTime % (self.L0+self.L1) > self.L1:
+            return True
         else:
-            self.hasTrain = True
-        return self.hasTrain
+            return False
+        # elif currentGameTime - self.lastTrainTime < self.L0:
+        #     self.lastTrainTime = currentGameTime
+        #     return True
+        # elif currentGameTime - self.lastTrainTime >= self.L1:
+        #     self.lastTrainTime = currentGameTime
+        #     return True
+        # else:
+        #     return False
+            
+
+
+
+        # if 0<=((currentGameTime)%(self.L0+self.L1))<=self.L1 :
+        #     self.hasTrain = False
+        # else:
+        #     self.hasTrain = True
+        # return self.hasTrain
         
     def setLastTime(self, x):
         self.lastTrainTime = x

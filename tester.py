@@ -6,30 +6,32 @@ from Optimize import Optimize
 M = 5
 S = 5
 
-def optimizeGame(simpleGame, optimizeGame, dataSet = [ [-1] ]*M, simpleCollisionsL = [], optimizeCollisionsL = []):
+def optimizeGame(simpleGameObj, optimizeGameObj, dataSet = [ [] ]*M, simpleCollisionsL = [], optimizeCollisionsL = []):
     
-    oCollisions = optimizeGame.playGame(dataSet)
-    sCollisons = simpleGame.playGame()
+    sCollisons = simpleGameObj.playGame()
+    oCollisions = optimizeGameObj.playGame(dataSet)
     simpleCollisionsL.append(sCollisons)
     
     optimizeCollisionsL.append(oCollisions)
-    dataSet = optimizeGame.getData()
+    dataSet = optimizeGameObj.getData()
 
-    if oCollisions == 0:
+    if oCollisions - sCollisons > 5 :
         return (simpleCollisionsL, optimizeCollisionsL)
 
     # Resets games without changing random probablilties 
-    simpleGame.reset()
-    optimizeGame.reset()
+    simpleGameObj.reset()
+    optimizeGameObj.reset()
 
     # Recursive call
-    optimizeGame(simpleGame, optimizeGame, dataSet, simpleCollisionsL, optimizeCollisionsL)
+    optimizeGame(simpleGameObj, optimizeGameObj, dataSet, simpleCollisionsL, optimizeCollisionsL)
     return -1
 
 
 sGame = SimpleAlgorithmGame(M,S)
-oGame = Optimize(M, S, [ [-1] ]*M)
+oGame = Optimize(M, S, [ [] ]*M)
 dataPoints = optimizeGame(sGame, oGame)
+print(dataPoints[0])
+print(dataPoints[1])
 plt.plot(dataPoints[0])
 plt.plot(dataPoints[1])
 plt.ylabel('Number of Collisions')
