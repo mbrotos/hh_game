@@ -35,7 +35,8 @@ class Main:
         self.hobo = Hobo(None, None, self.M)  # creates a hobo with no health or staring and give M
 
     def getProb(self):
-        return random.randint(1,10)  # do something
+	#use probability density function to get exponential distribution.
+        return expon.pdf(random.randrange(1,10))
 
     def getTotalTime(self):
         return self.current_time
