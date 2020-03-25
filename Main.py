@@ -1,6 +1,8 @@
 from Player import Player, Hobo
 from Track import Track
 import random
+from scipy.stats import expon
+
 class Main:
     """
     Main encapsulates a hogwartz game and helping functions.
