@@ -62,6 +62,15 @@ class Main:
         return self.current_time
 
     def reset(self):
+        """
+        Function to reset the game play without changing all the random variables of track info (valuse like L1 and L0 stay the same)
+
+        :param None
+        :return: None
+
+        Inputs: None 
+        Outputs: None
+        """
         self.current_time = 0
         self.player.set_health(100)
         self.player.set_current_track(0)
@@ -70,6 +79,15 @@ class Main:
             self.trackList[i].setLastTime(None)
 
     def getNumTracks(self):
+        """
+        Function to get the total amount of tracks in the game
+
+        :param None
+        :return: returns M value, which is the total amount of tracks for game
+
+        Inputs: None 
+        Outputs: None
+        """
         return self.M
 
     def checkCollision(self):
