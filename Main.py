@@ -8,7 +8,7 @@ class Main:
     GAME_TIME = 100 #WHATEVER...
     DAMAGE = 1
 
-    def __init__(self, M=None, S=None):
+    def init(self, M=None, S=None):
         """
         Construct a new 'Main' object given all params or none.
 
@@ -17,6 +17,9 @@ class Main:
         :param L1: Time it takes for the next train to arrive.
         :param S: Time that the player stays on each track before jumping to another.
         :return: returns nothing
+
+        Inputs: M and S values if none were given in params
+        Output: None
         """
         if M is None:
             self.M = int(input("Input the number of tracks: "))
@@ -35,9 +38,27 @@ class Main:
         self.hobo = Hobo(None, None, self.M)  # creates a hobo with no health or staring and give M
 
     def getProb(self):
+        """
+        Function to get probability distribution for track
+
+        :param None
+        :return: returns the probability value of track
+
+        Inputs: None 
+        Outputs: None
+        """
         return random.randint(1,10)  # do something
 
     def getTotalTime(self):
+        """
+        Function to get current game time
+
+        :param None
+        :return: returns the total currnt game time played
+
+        Inputs: None 
+        Outputs: None
+        """
         return self.current_time
 
     def reset(self):
@@ -52,6 +73,15 @@ class Main:
         return self.M
 
     def checkCollision(self):
+        """
+        Function to check if the player has collided with a train on the track at the given time
+
+        :param None
+        :return: returns True if user has collided with a train on the given track, False if no collision at current time
+
+        Inputs: None 
+        Outputs: None
+        """
         current_track = self.player.get_current_track()
         if self.trackList[current_track].hasTrainFunc(self.current_time):
             self.player.setCollisions(self.player.getCollisions() + 1)
@@ -60,6 +90,16 @@ class Main:
             return False
 
     def changeTrack(self):
+        """
+        Function to get input from user for a change of track. Prompts user for a new track number. Handles case with same track number input and promts user again for new track number.
+        Sets current track instance variable to user input and time on new track to 0
+
+        :param None
+        :return: None
+
+        Inputs: New track number 
+        Outputs: prints player ojbect
+        """
         new_track = int(input("Change Tracks! You are on track {}. Pick another track to move to from 0 to {} (not including current): ".format(self.player.get_current_track(), self.M-1)))
         while new_track == self.player.get_current_track():
             new_track = int(input("You cannot pick the same track. Pick another track: "))
@@ -69,12 +109,31 @@ class Main:
         print(self.player)
 
     def hoboMessage(self):
+        """
+        Function gets message from HOBO Message options and prints hobo message to consle
+
+        :param None
+        :return: None
+
+        Inputs: None 
+        Outputs: print hobo message
+        """
         msg = self.hobo.airPlaneMsg()
         if msg is not None:
             print(msg)
 
     def playGame(self):
-        
+        """
+        Function assembeles all functions to create the overall game play.
+        The while loops runs for every iteration of one game-time second (time unit).
+        Outputs when player is dead or game time is reached
+
+        :param None
+        :return: None
+
+        Inputs: None 
+        Outputs: Prints End Game results (You win or You lose)
+        """        
         while self.player.get_health() > 0 or self.current_time < Main.GAME_TIME:
 
             while self.player.getTOnCurTrack() < self.S:
