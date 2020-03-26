@@ -41,8 +41,7 @@ class Main:
 
     def getProb(self):
 	#use probability density function to get exponential distribution.
-        #return expon.pdf(random.randrange(1,10))
-        return 0.8
+        return expon.pdf(random.randrange(1,5)/7.0)
 
     def getTotalTime(self):
         return self.current_time
