@@ -4,8 +4,6 @@ import matplotlib.ticker as mticker
 from SimpleAlgorithmGame import SimpleAlgorithmGame
 from Optimize import Optimize
 
-
-
 # Disable
 def blockPrint():
     sys.stdout = open(os.devnull, 'w')
