@@ -21,11 +21,14 @@ class Main:
         :return: returns nothing
         """
         if M is None:
-            self.M = int(input("Input the number of tracks: "))
-            self.S = int(input("Input the time that the player stays on each track before jumping to another: "))
-            while self.M <= 1 or self.S <=0:
+            try:
                 self.M = int(input("Input the number of tracks: "))
-                self.S = int(input("Input the time that the player stays on each track before jumping to another: "))
+                self.M = int(input("Input the time that the player stays on each track before jumping to another: "))
+                while self.M <= 1 or self.M <=0:
+                    self.M = int(input("Incorrect. Input the number of tracks: "))
+                    self.M = int(input("Incorrect. Input the time that the player stays on each track before jumping to another: "))
+            except:
+                print("Your input was invalid!")
         else:
             self.M = M
             self.S = S
