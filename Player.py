@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*- 
 import random
+import sys
 class Player:
     """
     Player encapsulates a hogwartz game and helping functions.
@@ -12,6 +13,9 @@ class Player:
         :param health: The starting health of the player
         :param current_track: The track that the player is currently on.
         :return: returns nothing
+
+        Inputs: None 
+        Outputs: None
         """
         self.health = health
         self.current_track = current_track
@@ -19,30 +23,111 @@ class Player:
         self.numCollisions = 0
 
     def get_health(self):
+        """
+        A getter function that retuns the health of the player at current time
+
+        :param: None
+        :return: returns the health of the player
+
+        Inputs: None 
+        Outputs: None
+        """
         return self.health
 
     def get_current_track(self):
+        """
+        A getter function that retuns the updated data set of safe timesthe current track the player is on
+
+        :param: None
+        :return: returns the current track of the player
+
+        Inputs: None 
+        Outputs: None
+        """
         return self.current_track
 
     def set_current_track(self, track):
+        """
+        A setter function that sets the new track number on which the player goes
+
+        :param: None
+        :return: None
+
+        Inputs: None 
+        Outputs: None
+        """
         self.current_track = track
 
     def set_health(self, new_health):
+        """
+        A setter function that sets the new health of the player
+
+        :param: None
+        :return: None
+
+        Inputs: None 
+        Outputs: None
+        """
         self.health = new_health
 
     def getTOnCurTrack(self):
+        """
+        A getter function that retuns the time spent on the current track
+
+        :param: None
+        :return: returns the total time player has been on current track 
+
+        Inputs: None 
+        Outputs: None
+        """
         return self.tOnCurTrack
 
     def setTOnCurTrack(self, time):
+        """
+        A setter function that sets the time the player has been on the current track
+
+        :param: None
+        :return: None 
+
+        Inputs: None 
+        Outputs: None
+        """
         self.tOnCurTrack = time
 
     def getCollisions(self):
+        """
+        A getter function that retuns the total number of collisions the player has been in
+
+        :param: None
+        :return: returns the total times player has collided with train
+
+        Inputs: None 
+        Outputs: None
+        """
         return self.numCollisions
 
     def setCollisions(self, num):
+        """
+        A setter function that sets the total number of collision the player has been in
+
+        :param: None
+        :return: None
+
+        Inputs: None 
+        Outputs: None
+        """
         self.numCollisions = num
 
     def __str__(self):
+        """
+        A display function that returns a string with the important information
+
+        :param: None
+        :return: String of crutial information of the game play
+
+        Inputs: None 
+        Outputs: None
+        """
         return "Player is on track: {} and has {} health. ".format(self.current_track, self.health)
 
 class Hobo(Player):
@@ -71,6 +156,9 @@ class Hobo(Player):
         :param health: The starting health of the player
         :param current_track: The track that the player is currently on.
         :return: returns nothing
+
+        Inputs: None 
+        Outputs: None
         """
         super().__init__(health, current_track)
         self.numOfTracks = M
@@ -80,8 +168,12 @@ class Hobo(Player):
     def airPlaneMsg(self):
         """
         Selects a random message from the Hobo.
-
+        
+        :param: None
         :return: a string containing a message from the hobo
+
+        Inputs: None 
+        Outputs: None
         """
         airplane_prob = random.randint(1, 10)
 

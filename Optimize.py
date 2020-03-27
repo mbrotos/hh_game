@@ -1,5 +1,6 @@
 from Main import Main
 import random
+import sys
 class Optimize(Main):
     """
     A child object of the Main game that creates a simple benchmark.
@@ -7,17 +8,42 @@ class Optimize(Main):
     def __init__(self, M, S, data):
         """
         Initializes the part with given test parameters.
+
         :param M: number of tracks
         :param S: Time that the player stays on each track before jumping to another.
         :return: returns nothing 
+
+        Inputs: None 
+        Outputs: None
         """
         super().__init__(M, S)
         self.dataSet = data
 
     def getData(self):
+        """
+        A getter function that retuns the updated data set of safe times
+
+        :param: None
+        :return: returns the data of collection of safe times on each track  
+
+        Inputs: None 
+        Outputs: None
+        """
         return self.dataSet
 
     def checkConsecutive(self, alist, ele, count = 1):
+        """
+        Function returns the total amount of consecutive time elements that are correct in the list given. All non consecutive elements need to be updated
+        Resurcive if the element is consecutive, moves on to next element.
+
+        :param alist: List containing all safe times on the track
+        :param ele: An element that is in the list (acts as a bookmark)
+        :param count: The total count of consecutive elements in the list
+        :return: returns the data of collection of safe times on each trach  
+
+        Inputs: None 
+        Outputs: None
+        """
         currentIndex = alist.index(ele)
         if len(alist) > currentIndex+1 and alist[currentIndex+1] == ele +1:
             return self.checkConsecutive(alist, ele+1, count+1)
@@ -25,8 +51,14 @@ class Optimize(Main):
 
     def changeTrack(self):
         """
-        Overrides the changeTrack() function. A optimization algorithm will be implemented
+        A function that overrides the changeTrack() function. A optimization algorithm will be implemented
         to decide which track to move to.
+
+        :param: None
+        :return: None 
+
+        Inputs: None 
+        Outputs: Prints player object
         """
         unclear = True #for the case where no best next track is found
 
@@ -65,6 +97,15 @@ class Optimize(Main):
         print(self.player)
 
     def checkCollision(self):
+        """
+        Function to check if the player has collided with a train on the track at the given time
+
+        :param None
+        :return: returns True if user has collided with a train on the given track, False if no collision at current time
+
+        Inputs: None 
+        Outputs: None
+        """
         current_track = self.player.get_current_track()
         if self.trackList[current_track].hasTrainFunc(self.current_time):
             self.player.setCollisions(self.player.getCollisions() + 1)
@@ -76,5 +117,17 @@ class Optimize(Main):
             return False
 
     def playGame(self, dataSet):
+        """
+        Function updates with new dataset and plays game again
+
+        :param None
+        :return: returns the original Main playGame()
+
+        Inputs: None 
+        Outputs: None
+        """
         self.dataSet = dataSet
         return super().playGame()
+
+
+        #plays same game over and over and saving all the times that the tracks are safe, keep running the game and built off the data set...the 100th game knows all the safe places to go
