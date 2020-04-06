@@ -5,17 +5,38 @@ import matplotlib.ticker as mticker
 from SimpleAlgorithmGame import SimpleAlgorithmGame
 from Optimize import Optimize
 
-# Disable
+
 def blockPrint():
+    """
+    Disables output to stdout.
+
+    :param: None
+    :return: returns nothing
+    """
     sys.stdout = open(os.devnull, 'w')
 
-# Restore
+
 def enablePrint():
+    """
+    Enables output to stdout.
+
+    :param: None
+    :return: returns nothing
+    """
     sys.stdout = sys.__stdout__
 
 
 def optimizeGame(simpleGameObj, optimizeGameObj, dataSet, simpleCollisionsL = [], optimizeCollisionsL = []):
-    
+    """
+    Runs both optimized and simple game alogirthms storing number of collision, recursively.
+
+    :param simpleGameObj: an instance of the game running the simple algorithm.
+    :param optimizeGameObj: an instance of the game running the optimized algorithm.
+    :param dataSet: The running dataset maintained between optimized game runs.
+    :param simpleCollisionsL: The runnning list of collosions per simple game.
+    :param optimizeCollisionsL: The runnning list of collosions per optimized game.
+    :return (simpleCollisionsL, optimizeCollisionsL): returns tuple containing list of number of collisions.
+    """
     sCollisons = simpleGameObj.playGame()
     oCollisions = optimizeGameObj.playGame(dataSet)
     simpleCollisionsL.append(sCollisons)
@@ -33,6 +54,12 @@ def optimizeGame(simpleGameObj, optimizeGameObj, dataSet, simpleCollisionsL = []
         return optimizeGame(simpleGameObj, optimizeGameObj, dataSet, simpleCollisionsL, optimizeCollisionsL)
 
 def main():
+    """
+    Runs the optimization given game parameters and plots results.
+
+    :param: None.
+    :return: None.
+    """
     M = None
     S = None
 

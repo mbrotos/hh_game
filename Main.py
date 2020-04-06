@@ -8,7 +8,7 @@ class Main:
     """
     Main encapsulates a hogwartz game and helping functions.
     """
-    GAME_TIME = 100 #WHATEVER...
+    GAME_TIME = 100
     DAMAGE = 1
 
     def __init__(self, M=None, S=None):
@@ -82,8 +82,6 @@ class Main:
         self.player.set_current_track(0)
         self.player.setTOnCurTrack(0)
         self.player.setCollisions(0)
-        # for i in range(len(self.trackList)):
-        #     self.trackList[i].setLastTime(None)
 
     def getNumTracks(self):
         """
@@ -161,9 +159,7 @@ class Main:
         while self.player.get_health() > 0 and self.current_time < Main.GAME_TIME:
 
             while self.player.getTOnCurTrack() < self.S and self.current_time < Main.GAME_TIME:
-                # Hobo airplane function call
-                #self.hoboMessage()
-                # Call hasTrainFunc
+                self.hoboMessage()
                 if self.checkCollision():
                     self.player.set_health(self.player.get_health() - Main.DAMAGE)
                     if self.player.get_health() <= 0:
@@ -186,9 +182,6 @@ class Main:
 
 
         return self.player.getCollisions()
-
-# game = Main()
-# game.playGame()
 
 
 

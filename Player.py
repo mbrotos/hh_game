@@ -134,7 +134,6 @@ class Hobo(Player):
     """
     Main encapsulates a hogwartz game and helping functions.
     """
-    #State variables
     messagesList = [
         "Oi bruv, track {} appears a bit dodgy.",
         "A charmin’ little bloke aren’t ye’? Don’t fall arse over tit dodgin’ the train approachin’ track {}.",

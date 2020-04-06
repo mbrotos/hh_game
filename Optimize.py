@@ -128,6 +128,3 @@ class Optimize(Main):
         """
         self.dataSet = dataSet
         return super().playGame()
-
-
-        #plays same game over and over and saving all the times that the tracks are safe, keep running the game and built off the data set...the 100th game knows all the safe places to go
