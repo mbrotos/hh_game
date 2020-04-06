@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module SimpleAlgorithmGame</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>SimpleAlgorithmGame</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cadams%5Conedrive%5Conedrive%20-%20ryerson%20university%5Cdocuments%5Cschool%5Cyear%202%5Ccps406%5Chh_game%5Csimplealgorithmgame.py">c:\users\adams\onedrive\onedrive - ryerson university\documents\school\year 2\cps406\hh_game\simplealgorithmgame.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="Main.html#Main">Main.Main</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="SimpleAlgorithmGame.html#SimpleAlgorithmGame">SimpleAlgorithmGame</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SimpleAlgorithmGame">class <strong>SimpleAlgorithmGame</strong></a>(<a href="Main.html#Main">Main.Main</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#SimpleAlgorithmGame">SimpleAlgorithmGame</a>(M,&nbsp;S)<br>
+&nbsp;<br>
+A&nbsp;child&nbsp;object&nbsp;of&nbsp;the&nbsp;<a href="Main.html#Main">Main</a>&nbsp;game&nbsp;that&nbsp;creates&nbsp;a&nbsp;simple&nbsp;benchmark.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SimpleAlgorithmGame.html#SimpleAlgorithmGame">SimpleAlgorithmGame</a></dd>
+<dd><a href="Main.html#Main">Main.Main</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SimpleAlgorithmGame-__init__"><strong>__init__</strong></a>(self, M, S)</dt><dd><tt>Initializes&nbsp;the&nbsp;part&nbsp;with&nbsp;given&nbsp;test&nbsp;parameters.<br>
+&nbsp;<br>
+:param&nbsp;M:&nbsp;number&nbsp;of&nbsp;tracks<br>
+:param&nbsp;S:&nbsp;Time&nbsp;that&nbsp;the&nbsp;player&nbsp;stays&nbsp;on&nbsp;each&nbsp;track&nbsp;before&nbsp;jumping&nbsp;to&nbsp;another.<br>
+:return:&nbsp;returns&nbsp;nothing&nbsp;<br>
+&nbsp;<br>
+Input:&nbsp;None<br>
+Output:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="SimpleAlgorithmGame-changeTrack"><strong>changeTrack</strong></a>(self)</dt><dd><tt>A&nbsp;function&nbsp;that&nbsp;overrides&nbsp;the&nbsp;<a href="#SimpleAlgorithmGame-changeTrack">changeTrack</a>()&nbsp;function.&nbsp;A&nbsp;simple&nbsp;algorithm&nbsp;that&nbsp;will&nbsp;just&nbsp;move&nbsp;<br>
+to&nbsp;the&nbsp;next&nbsp;higher-&nbsp;or&nbsp;lower-numbered&nbsp;track&nbsp;in&nbsp;case&nbsp;of&nbsp;a&nbsp;collision.<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None&nbsp;<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;Prints&nbsp;player&nbsp;object</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="Main.html#Main">Main.Main</a>:<br>
+<dl><dt><a name="SimpleAlgorithmGame-checkCollision"><strong>checkCollision</strong></a>(self)</dt><dd><tt>Function&nbsp;to&nbsp;check&nbsp;if&nbsp;the&nbsp;player&nbsp;has&nbsp;collided&nbsp;with&nbsp;a&nbsp;train&nbsp;on&nbsp;the&nbsp;track&nbsp;at&nbsp;the&nbsp;given&nbsp;time<br>
+&nbsp;<br>
+:param&nbsp;None<br>
+:return:&nbsp;returns&nbsp;True&nbsp;if&nbsp;user&nbsp;has&nbsp;collided&nbsp;with&nbsp;a&nbsp;train&nbsp;on&nbsp;the&nbsp;given&nbsp;track,&nbsp;False&nbsp;if&nbsp;no&nbsp;collision&nbsp;at&nbsp;current&nbsp;time<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="SimpleAlgorithmGame-getNumTracks"><strong>getNumTracks</strong></a>(self)</dt><dd><tt>Function&nbsp;to&nbsp;get&nbsp;the&nbsp;total&nbsp;amount&nbsp;of&nbsp;tracks&nbsp;in&nbsp;the&nbsp;game<br>
+&nbsp;<br>
+:param&nbsp;None<br>
+:return:&nbsp;returns&nbsp;M&nbsp;value,&nbsp;which&nbsp;is&nbsp;the&nbsp;total&nbsp;amount&nbsp;of&nbsp;tracks&nbsp;for&nbsp;game<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="SimpleAlgorithmGame-getProb"><strong>getProb</strong></a>(self)</dt><dd><tt>Function&nbsp;to&nbsp;get&nbsp;probability&nbsp;distribution&nbsp;for&nbsp;track.&nbsp;It&nbsp;uses&nbsp;probability&nbsp;density&nbsp;function&nbsp;to&nbsp;get&nbsp;exponential&nbsp;distribution.<br>
+&nbsp;<br>
+:param&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;probability&nbsp;value&nbsp;of&nbsp;track<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="SimpleAlgorithmGame-getTotalTime"><strong>getTotalTime</strong></a>(self)</dt><dd><tt>Function&nbsp;to&nbsp;get&nbsp;current&nbsp;game&nbsp;time<br>
+&nbsp;<br>
+:param&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;total&nbsp;currnt&nbsp;game&nbsp;time&nbsp;played<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="SimpleAlgorithmGame-hoboMessage"><strong>hoboMessage</strong></a>(self)</dt><dd><tt>Function&nbsp;gets&nbsp;message&nbsp;from&nbsp;HOBO&nbsp;Message&nbsp;options&nbsp;and&nbsp;prints&nbsp;hobo&nbsp;message&nbsp;to&nbsp;consle<br>
+&nbsp;<br>
+:param&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;print&nbsp;hobo&nbsp;message</tt></dd></dl>
+
+<dl><dt><a name="SimpleAlgorithmGame-playGame"><strong>playGame</strong></a>(self)</dt><dd><tt>Function&nbsp;assembeles&nbsp;all&nbsp;functions&nbsp;to&nbsp;create&nbsp;the&nbsp;overall&nbsp;game&nbsp;play.<br>
+The&nbsp;while&nbsp;loops&nbsp;runs&nbsp;for&nbsp;every&nbsp;iteration&nbsp;of&nbsp;one&nbsp;game-time&nbsp;second&nbsp;(time&nbsp;unit).<br>
+Outputs&nbsp;when&nbsp;player&nbsp;is&nbsp;dead&nbsp;or&nbsp;game&nbsp;time&nbsp;is&nbsp;reached<br>
+&nbsp;<br>
+:param&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;Prints&nbsp;End&nbsp;Game&nbsp;results&nbsp;(You&nbsp;win&nbsp;or&nbsp;You&nbsp;lose)</tt></dd></dl>
+
+<dl><dt><a name="SimpleAlgorithmGame-reset"><strong>reset</strong></a>(self)</dt><dd><tt>Function&nbsp;to&nbsp;reset&nbsp;the&nbsp;game&nbsp;play&nbsp;without&nbsp;changing&nbsp;all&nbsp;the&nbsp;random&nbsp;variables&nbsp;of&nbsp;track&nbsp;info&nbsp;(valuse&nbsp;like&nbsp;L1&nbsp;and&nbsp;L0&nbsp;stay&nbsp;the&nbsp;same)<br>
+&nbsp;<br>
+:param&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="Main.html#Main">Main.Main</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="Main.html#Main">Main.Main</a>:<br>
+<dl><dt><strong>DAMAGE</strong> = 1</dl>
+
+<dl><dt><strong>GAME_TIME</strong> = 100</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

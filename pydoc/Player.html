@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Player</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Player</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cadams%5Conedrive%5Conedrive%20-%20ryerson%20university%5Cdocuments%5Cschool%5Cyear%202%5Ccps406%5Chh_game%5Cplayer.py">c:\users\adams\onedrive\onedrive - ryerson university\documents\school\year 2\cps406\hh_game\player.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Player.html#Player">Player</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Player.html#Hobo">Hobo</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Hobo">class <strong>Hobo</strong></a>(<a href="Player.html#Player">Player</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Hobo">Hobo</a>(health,&nbsp;current_track,&nbsp;M)<br>
+&nbsp;<br>
+Main&nbsp;encapsulates&nbsp;a&nbsp;hogwartz&nbsp;game&nbsp;and&nbsp;helping&nbsp;functions.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Player.html#Hobo">Hobo</a></dd>
+<dd><a href="Player.html#Player">Player</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Hobo-__init__"><strong>__init__</strong></a>(self, health, current_track, M)</dt><dd><tt>Construct&nbsp;for&nbsp;a&nbsp;hobo,&nbsp;whether&nbsp;player&nbsp;or&nbsp;non-player(default&nbsp;non-player).<br>
+&nbsp;<br>
+:param&nbsp;health:&nbsp;The&nbsp;starting&nbsp;health&nbsp;of&nbsp;the&nbsp;player<br>
+:param&nbsp;current_track:&nbsp;The&nbsp;track&nbsp;that&nbsp;the&nbsp;player&nbsp;is&nbsp;currently&nbsp;on.<br>
+:return:&nbsp;returns&nbsp;nothing<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-airPlaneMsg"><strong>airPlaneMsg</strong></a>(self)</dt><dd><tt>Selects&nbsp;a&nbsp;random&nbsp;message&nbsp;from&nbsp;the&nbsp;<a href="#Hobo">Hobo</a>.<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;a&nbsp;string&nbsp;containing&nbsp;a&nbsp;message&nbsp;from&nbsp;the&nbsp;hobo<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>messagesList</strong> = ['Oi bruv, track {} appears a bit dodgy.', 'A charmin’ little bloke aren’t ye’? Don’t fall arse over tit dodgin’ the train approachin’ track {}.', 'Mate, Pissed Peter is off his rockers! He starte...sed drunk ever since his wife an’ child left ‘im…', 'You remind me of this one chap I met a while bac... Anyhow, a train is headin’ your way on track {}.', 'A complete nutjob you are mate! You must be slos...eself. Steer clear of track {} if you wan’a live!', 'Bruv, me and me mom ‘ave been livin’ on these tr...n’t want to make a complete fool out of yourself!', 'Me mate and I met Dumbledore but he went off say..., I ‘ont lie to you! Avoid track {} at all costs!', 'Life has never been kind to me, mon ami. I have ...eune ami! Le train is approaching on ze track {}!', 'You-! I saw ye’ in me dream! May the great wizar... track {}, your nemesis, a train, is approaching!', 'Knight of Computer Science! Tread carefully as y...tay away from! May the Gods ever be on your side!']</dl>
+
+<hr>
+Methods inherited from <a href="Player.html#Player">Player</a>:<br>
+<dl><dt><a name="Hobo-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>A&nbsp;display&nbsp;function&nbsp;that&nbsp;returns&nbsp;a&nbsp;string&nbsp;with&nbsp;the&nbsp;important&nbsp;information<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;String&nbsp;of&nbsp;crutial&nbsp;information&nbsp;of&nbsp;the&nbsp;game&nbsp;play<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-getCollisions"><strong>getCollisions</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;function&nbsp;that&nbsp;retuns&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;collisions&nbsp;the&nbsp;player&nbsp;has&nbsp;been&nbsp;in<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;total&nbsp;times&nbsp;player&nbsp;has&nbsp;collided&nbsp;with&nbsp;train<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-getTOnCurTrack"><strong>getTOnCurTrack</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;function&nbsp;that&nbsp;retuns&nbsp;the&nbsp;time&nbsp;spent&nbsp;on&nbsp;the&nbsp;current&nbsp;track<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;total&nbsp;time&nbsp;player&nbsp;has&nbsp;been&nbsp;on&nbsp;current&nbsp;track&nbsp;<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-get_current_track"><strong>get_current_track</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;function&nbsp;that&nbsp;retuns&nbsp;the&nbsp;updated&nbsp;data&nbsp;set&nbsp;of&nbsp;safe&nbsp;timesthe&nbsp;current&nbsp;track&nbsp;the&nbsp;player&nbsp;is&nbsp;on<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;current&nbsp;track&nbsp;of&nbsp;the&nbsp;player<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-get_health"><strong>get_health</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;function&nbsp;that&nbsp;retuns&nbsp;the&nbsp;health&nbsp;of&nbsp;the&nbsp;player&nbsp;at&nbsp;current&nbsp;time<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;health&nbsp;of&nbsp;the&nbsp;player<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-setCollisions"><strong>setCollisions</strong></a>(self, num)</dt><dd><tt>A&nbsp;setter&nbsp;function&nbsp;that&nbsp;sets&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;collision&nbsp;the&nbsp;player&nbsp;has&nbsp;been&nbsp;in<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-setTOnCurTrack"><strong>setTOnCurTrack</strong></a>(self, time)</dt><dd><tt>A&nbsp;setter&nbsp;function&nbsp;that&nbsp;sets&nbsp;the&nbsp;time&nbsp;the&nbsp;player&nbsp;has&nbsp;been&nbsp;on&nbsp;the&nbsp;current&nbsp;track<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None&nbsp;<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-set_current_track"><strong>set_current_track</strong></a>(self, track)</dt><dd><tt>A&nbsp;setter&nbsp;function&nbsp;that&nbsp;sets&nbsp;the&nbsp;new&nbsp;track&nbsp;number&nbsp;on&nbsp;which&nbsp;the&nbsp;player&nbsp;goes<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Hobo-set_health"><strong>set_health</strong></a>(self, new_health)</dt><dd><tt>A&nbsp;setter&nbsp;function&nbsp;that&nbsp;sets&nbsp;the&nbsp;new&nbsp;health&nbsp;of&nbsp;the&nbsp;player<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="Player.html#Player">Player</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Player">class <strong>Player</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Player">Player</a>(health=100,&nbsp;current_track=0)<br>
+&nbsp;<br>
+<a href="#Player">Player</a>&nbsp;encapsulates&nbsp;a&nbsp;hogwartz&nbsp;game&nbsp;and&nbsp;helping&nbsp;functions.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Player-__init__"><strong>__init__</strong></a>(self, health=100, current_track=0)</dt><dd><tt>Construct&nbsp;a&nbsp;new&nbsp;'Main'&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+:param&nbsp;health:&nbsp;The&nbsp;starting&nbsp;health&nbsp;of&nbsp;the&nbsp;player<br>
+:param&nbsp;current_track:&nbsp;The&nbsp;track&nbsp;that&nbsp;the&nbsp;player&nbsp;is&nbsp;currently&nbsp;on.<br>
+:return:&nbsp;returns&nbsp;nothing<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>A&nbsp;display&nbsp;function&nbsp;that&nbsp;returns&nbsp;a&nbsp;string&nbsp;with&nbsp;the&nbsp;important&nbsp;information<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;String&nbsp;of&nbsp;crutial&nbsp;information&nbsp;of&nbsp;the&nbsp;game&nbsp;play<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-getCollisions"><strong>getCollisions</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;function&nbsp;that&nbsp;retuns&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;collisions&nbsp;the&nbsp;player&nbsp;has&nbsp;been&nbsp;in<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;total&nbsp;times&nbsp;player&nbsp;has&nbsp;collided&nbsp;with&nbsp;train<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-getTOnCurTrack"><strong>getTOnCurTrack</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;function&nbsp;that&nbsp;retuns&nbsp;the&nbsp;time&nbsp;spent&nbsp;on&nbsp;the&nbsp;current&nbsp;track<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;total&nbsp;time&nbsp;player&nbsp;has&nbsp;been&nbsp;on&nbsp;current&nbsp;track&nbsp;<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-get_current_track"><strong>get_current_track</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;function&nbsp;that&nbsp;retuns&nbsp;the&nbsp;updated&nbsp;data&nbsp;set&nbsp;of&nbsp;safe&nbsp;timesthe&nbsp;current&nbsp;track&nbsp;the&nbsp;player&nbsp;is&nbsp;on<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;current&nbsp;track&nbsp;of&nbsp;the&nbsp;player<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-get_health"><strong>get_health</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;function&nbsp;that&nbsp;retuns&nbsp;the&nbsp;health&nbsp;of&nbsp;the&nbsp;player&nbsp;at&nbsp;current&nbsp;time<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;returns&nbsp;the&nbsp;health&nbsp;of&nbsp;the&nbsp;player<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-setCollisions"><strong>setCollisions</strong></a>(self, num)</dt><dd><tt>A&nbsp;setter&nbsp;function&nbsp;that&nbsp;sets&nbsp;the&nbsp;total&nbsp;number&nbsp;of&nbsp;collision&nbsp;the&nbsp;player&nbsp;has&nbsp;been&nbsp;in<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-setTOnCurTrack"><strong>setTOnCurTrack</strong></a>(self, time)</dt><dd><tt>A&nbsp;setter&nbsp;function&nbsp;that&nbsp;sets&nbsp;the&nbsp;time&nbsp;the&nbsp;player&nbsp;has&nbsp;been&nbsp;on&nbsp;the&nbsp;current&nbsp;track<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None&nbsp;<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-set_current_track"><strong>set_current_track</strong></a>(self, track)</dt><dd><tt>A&nbsp;setter&nbsp;function&nbsp;that&nbsp;sets&nbsp;the&nbsp;new&nbsp;track&nbsp;number&nbsp;on&nbsp;which&nbsp;the&nbsp;player&nbsp;goes<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Player-set_health"><strong>set_health</strong></a>(self, new_health)</dt><dd><tt>A&nbsp;setter&nbsp;function&nbsp;that&nbsp;sets&nbsp;the&nbsp;new&nbsp;health&nbsp;of&nbsp;the&nbsp;player<br>
+&nbsp;<br>
+:param:&nbsp;None<br>
+:return:&nbsp;None<br>
+&nbsp;<br>
+Inputs:&nbsp;None&nbsp;<br>
+Outputs:&nbsp;None</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
