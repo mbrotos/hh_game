@@ -27,10 +27,10 @@ class Main:
         if M is None:
             try:
                 self.M = int(input("Input the number of tracks: "))
-                self.M = int(input("Input the time that the player stays on each track before jumping to another: "))
-                while self.M <= 1 or self.M <=0:
+                self.S = int(input("Input the time that the player stays on each track before jumping to another: "))
+                while self.M <= 1 or self.S <=0:
                     self.M = int(input("Incorrect. Input the number of tracks: "))
-                    self.M = int(input("Incorrect. Input the time that the player stays on each track before jumping to another: "))
+                    self.S = int(input("Incorrect. Input the time that the player stays on each track before jumping to another: "))
             except:
                 print("Your input was invalid!")
         else:
