@@ -184,4 +184,7 @@ class Main:
         return self.player.getCollisions()
 
 
+if __name__ == "__main__":
+    game = Main()
+    game.playGame()
 
