@@ -33,6 +33,7 @@ class Main:
                     self.S = int(input("Incorrect. Input the time that the player stays on each track before jumping to another: "))
             except:
                 print("Your input was invalid!")
+                exit(1)
         else:
             self.M = M
             self.S = S
