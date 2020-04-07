@@ -124,9 +124,14 @@ class Main:
         Inputs: New track number 
         Outputs: prints player ojbect
         """
-        new_track = int(input("Change Tracks! You are on track {}. Pick another track to move to from 0 to {} (not including current): ".format(self.player.get_current_track(), self.M-1)))
-        while new_track == self.player.get_current_track():
-            new_track = int(input("You cannot pick the same track. Pick another track: "))
+        new_track = 0
+        try:
+            new_track = int(input("Change Tracks! You are on track {}. Pick another track to move to from 0 to {} (not including current): ".format(self.player.get_current_track(), self.M-1)))
+            while new_track == self.player.get_current_track() or new_track<0 or new_track>self.getNumTracks()-1:
+                new_track = int(input("You cannot pick the that track. Pick another track: "))
+        except :
+            print("Invalid Input!")
+            self.changeTrack()
         self.player.set_current_track(new_track)
         self.player.setTOnCurTrack(0)
         print(self.player)
