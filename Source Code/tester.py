@@ -82,6 +82,7 @@ def main():
     plt.ylabel('Number of Collisions')
     plt.xlabel('Number of games played')
     plt.xlim(xmin=1)
+    #plt.ylim(0,100)
     #plt.gca().xaxis.set_major_locator(mticker.MultipleLocator(1))
     plt.legend()
     plt.show()
